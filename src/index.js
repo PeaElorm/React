@@ -1,17 +1,79 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css"
+import pic1 from "./images/anastasiya-pavlova-IcLqFMC3h08-unsplash.jpg"
+import pic2 from "./images/anastasiya-pavlova-SW9sp2asIX8-unsplash.jpg"
+import pic3 from "./images/andreas-dress-IxiCibeZC10-unsplash.jpg"
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+//addinf props
+const Person = ({ img, name, job, children }) => {
+  // using template litrals
+  // const url = `https://randomuser.me/api/portraits/thumb/men/${img}.jpg`;
+  return (
+    <article className = "person">
+      {/* <img src={url}></img> */}
+      <h4>{name}</h4>
+      <h4>{job}</h4>
+      {children}
+    </article>
+  );
+};
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+//now to create a cpmponent
+const PersonList = () => {
+  return (
+    <div>
+      <section className="person-list">
+        <Person img="34" name="Elorm" job="Biomedical Engineer/Web Developer">
+          <img src={pic1} alt=""></img>
+        </Person>
+        <Person img="22" name="Richard" job="Computer engineer">
+          <img src={pic2} alt=""></img>
+        </Person>
+        <Person img="56" name="Chris" job="Doctor">
+          {" "}
+          <p>iiiuuijhygh</p> <img src={pic3} alt=""></img>{" "}
+        </Person>
+      </section>
+      <section className="person-list">
+        <Person img="34" name="Elorm" job="Biomedical Engineer/Web Developer">
+          <img src={pic1} alt=""></img>
+        </Person>
+        <Person img="22" name="Richard" job="Computer engineer">
+          <img src={pic2} alt=""></img>
+        </Person>
+        <Person img="56" name="Chris" job="Doctor">
+          {" "}
+          <p>iiiuuijhygh</p> <img src={pic3} alt=""></img>{" "}
+        </Person>
+      </section>
+
+      <section className="person-list">
+        <Person img="34" name="Elorm" job="Biomedical Engineer/Web Developer">
+          <img src={pic1} alt=""></img>
+        </Person>
+        <Person img="22" name="Richard" job="Computer engineer">
+          <img src={pic2} alt=""></img>
+        </Person>
+        <Person img="56" name="Chris" job="Doctor">
+          {" "}
+          <p>iiiuuijhygh</p> <img src={pic3} alt=""></img>{" "}
+        </Person>
+      </section>
+      <section className="person-list">
+        <Person img="34" name="Elorm" job="Biomedical Engineer/Web Developer">
+          <img src={pic1} alt=""></img>
+        </Person>
+        <Person img="22" name="Richard" job="Computer engineer">
+          <img src={pic2} alt=""></img>
+        </Person>
+        <Person img="56" name="Chris" job="Doctor">
+          {" "}
+          <p>iiiuuijhygh</p> <img src={pic3} alt=""></img>{" "}
+        </Person>
+      </section>
+    </div>
+  );
+};
+
+ReactDOM.render(<PersonList></PersonList>, document.getElementById("root"));
